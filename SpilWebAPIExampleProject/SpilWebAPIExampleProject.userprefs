@@ -1,8 +1,8 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="../SpilGamesAPI.cs">
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="../../WIP/ARC/ARC/Assets/Scripts/InGameElements/Controllers/Inventory.cs">
     <Files>
-      <File FileName="../SpilGamesAPI.cs" Line="161" Column="1" />
+      <File FileName="../../WIP/ARC/ARC/Assets/Scripts/InGameElements/Controllers/Inventory.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

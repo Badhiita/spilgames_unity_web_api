@@ -1,22 +1,26 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System;
+using UnityEngine.UI;
 
 public class SpilGamesAPI : MonoBehaviour 
 {
+
+	//debug text for example project, feel free to take this out
+	public Text debugText;
+
 	//your Spil `Games web game ID
 	public string GAME_ID = "576742227280293562";
 	
-	// make sure to include this in the HTML of the page hosting the game
-	// <script type="text/javascript" src="http://cdn.gameplayer.io/api/js/game.js"></script>
-	
 	// where you will put the portal logo
 	public Rect logoPosition;
-	
+
+	// the custom height used by the custom height method
 	public int customHeight;
 	
 	//the logo of the portal
 	private Texture _logo;
+
 	//have we recived the logo texture from the portal
 	private bool _hasTexture = false;
 	
@@ -25,22 +29,23 @@ public class SpilGamesAPI : MonoBehaviour
 		this.gameObject.name = "SpilGamesAPI";
 		//call to the API with the game ID, request assets
 		Application.ExternalEval (
-			"(function() {function onLoadError () {if(typeof u !== 'undefined' && u.getUnity && typeof u.getUnity === 'function'){u.getUnity().SendMessage('SpilGamesAPI', 'APILoadingError', '');}}function initUnity () {if(typeof u !== 'undefined' && u.getUnity && typeof u.getUnity === 'function'){var setGameAPILogo = function (logoUrl) {u.getUnity().SendMessage('SpilGamesAPI', 'setGameAPILogo', logoUrl);};var resumeGame = function(){u.getUnity().SendMessage('SpilGamesAPI', 'resumeGame', '');};var apiInstance;GameAPI.loadAPI(function(api){apiInstance = api;apiInstance.Branding.displaySplashScreen(function(){});var logoData = apiInstance.Branding.getLogo();if(logoData.image){setGameAPILogo(logoData.image);}}, {id:'" + GAME_ID + "'});}}function loadScript(src, callback){ var s,r,t;r = false;s = document.createElement('script');s.type = 'text/javascript';s.src = src;s.onerror = onLoadError();s.onload = s.onreadystatechange = function() {if ( !r && (!this.readyState || this.readyState == 'complete') ){r = true;callback();}};t = document.getElementsByTagName('script')[0];t.parentNode.insertBefore(s, t);}if(typeof GameAPI !== 'undefined'){initUnity();}else{loadScript('http://cdn.gameplayer.io/api/js/game.js', initUnity);}})();"		
-		);
-		
-		
+			"(function() {function onLoadError () {if(typeof u !== 'undefined' && u.getUnity && typeof u.getUnity === 'function'){u.getUnity().SendMessage('SpilGamesAPI', 'APILoadingError', '');}};function initUnity () {if(typeof u !== 'undefined' && u.getUnity && typeof u.getUnity === 'function'){var setGameAPILogo = function (logoUrl) {u.getUnity().SendMessage('SpilGamesAPI', 'setGameAPILogo', logoUrl);};var apiInstance;GameAPI.loadAPI(function(api){apiInstance = api;apiInstance.Branding.displaySplashScreen(function(){});var logoData = apiInstance.Branding.getLogo();if(logoData.image){setGameAPILogo(logoData.image);}}, {id:'" + GAME_ID + "'});}};function loadScript(src, callback) {var s,r,t;r = false;s = document.createElement('script');s.type = 'text/javascript';s.src = src;s.onerror = onLoadError;s.onload = s.onreadystatechange = function() {if ( !r && (!this.readyState || this.readyState == 'complete') ){r = true;callback();}};t = document.getElementsByTagName('script')[0];t.parentNode.insertBefore(s, t);};if (typeof GameAPI !== 'undefined') {initUnity();} else {loadScript('http://cdn.gameplayer.io/api/js/game.js', initUnity);}})();"
+			);
+		debugText.text = "APILoaded";
 	}
-	
+
+	//this will fire if the API is unable to load for any reason
 	void APILoadingError(){
-		Debug.Log ("No API Loaded");
+		debugText.text = "No API Loaded";
 	}
-	
+
 	void Awake() 
 	{
 		//keep the api object throughout the game
 		DontDestroyOnLoad(gameObject);
 	}
-	
+
+
 	public bool isInitialized 
 	{
 		get { return _hasTexture; }
@@ -52,6 +57,7 @@ public class SpilGamesAPI : MonoBehaviour
 	}
 	void setGameAPILogo (string url) 
 	{
+		debugText.text = "setGameAPILogo" + url;
 		WebAlert( "Got URL "+url+" - will load!" );
 		StartCoroutine(loadLogo(url));
 	}
@@ -72,6 +78,7 @@ public class SpilGamesAPI : MonoBehaviour
 
 	IEnumerator loadLogo(string url) 
 	{
+		debugText.text ="loadlogostart" + url;
 		WebAlert( "Loading texture from "+url );
 		
 		WWW www = new WWW(url);
@@ -81,58 +88,51 @@ public class SpilGamesAPI : MonoBehaviour
 		
 		_logo = www.texture;
 		_hasTexture = true;
+		debugText.text = url;
 	}
 	
 	public void ForceAuthentication(){
-		
 		Application.ExternalEval (
 			"GameAPI.User.forceAuthentication();"
 		);
 	}
 
-	public void SetUpUser(string userData){
-		
+	public void SetUpUser(JSONObject userData){
 		Debug.Log (userData);
-		
 	}
 	
 	public void GetUser(){
-		
 		Application.ExternalEval (
 			"GameAPI.User.getUser(function (userData){if(typeof u !== 'undefined' && u.getUnity && typeof u.getUnity === 'function'){u.getUnity().SendMessage('SpilGamesAPI', 'SetUpUser', userData);}});"
 		);
-		
 	}
 	
 	public void ShowInvite(){
-		
 		Application.ExternalEval (
 			"GameAPI.Friends.showInvite();"
 		);
 	}
 	
-	public void SetUpFriends(string friendsData){
-		
-		Debug.Log (friendsData);
-		
+	public void SetUpFriends(JSONObject friendsData){
+		Debug.Log (friendsData.ToString());
 	}
 	
 	public void GetFriends(){
-		
 		Application.ExternalEval (
 			"GameAPI.Friends.getFriends(function (friendsData){if(typeof u !== 'undefined' && u.getUnity && typeof u.getUnity === 'function'){u.getUnity().SendMessage('SpilGamesAPI', 'SetUpFriends', friendsData);}});"
 		);
-		
 	}
 
+	//Enter the code here to pause your game before an AD, make sure the sound is muted too
 	public void pauseGame () 
 	{
-		Debug.Log ("Game Paused");
+		debugText.text = "Game Paused";
 	}
-	
+
+	//Enter the code here to resume your game after an AD
 	public void resumeGame () 
 	{
-		Debug.Log ("Game Resumed");
+		debugText.text = "Game Resumed";
 	}
 	
 	//show a spil ad
