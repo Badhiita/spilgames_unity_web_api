@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 
 Project("{FC4D6F7C-C594-68B0-A03F-6FB932B7D765}") = "SpilWebAPIExampleProject", "Assembly-CSharp-firstpass.csproj", "{F2B9B943-1B16-DA69-2B95-DEF12C714ACE}"
 EndProject
-Project("{FC4D6F7C-C594-68B0-A03F-6FB932B7D765}") = "SpilWebAPIExampleProject", "Assembly-CSharp-Editor.csproj", "{214AA121-0865-10FE-A776-BE1273F54106}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,15 +13,11 @@ Global
 		{F2B9B943-1B16-DA69-2B95-DEF12C714ACE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F2B9B943-1B16-DA69-2B95-DEF12C714ACE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F2B9B943-1B16-DA69-2B95-DEF12C714ACE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{214AA121-0865-10FE-A776-BE1273F54106}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{214AA121-0865-10FE-A776-BE1273F54106}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{214AA121-0865-10FE-A776-BE1273F54106}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{214AA121-0865-10FE-A776-BE1273F54106}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-												GlobalSection(MonoDevelopProperties) = preSolution
+																														GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1

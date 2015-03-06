@@ -70,7 +70,6 @@ public class SpilGamesAPI : MonoBehaviour
 	}
 	
 	public void AdjustHeight(){
-		
 		Application.ExternalEval (
 			"GameAPI.Game.adjustHeight("+ customHeight.ToString() + ");"
 		);
@@ -90,20 +89,23 @@ public class SpilGamesAPI : MonoBehaviour
 		_hasTexture = true;
 		debugText.text = url;
 	}
-	
+
+
+	//social features
 	public void ForceAuthentication(){
 		Application.ExternalEval (
 			"GameAPI.User.forceAuthentication();"
 		);
 	}
 
-	public void SetUpUser(JSONObject userData){
-		Debug.Log (userData);
+	public void SetUpUser(string userData){
+		debugText.text = "SetUpUser Called";
+		debugText.text += userData;
 	}
 	
 	public void GetUser(){
 		Application.ExternalEval (
-			"GameAPI.User.getUser(function (userData){if(typeof u !== 'undefined' && u.getUnity && typeof u.getUnity === 'function'){u.getUnity().SendMessage('SpilGamesAPI', 'SetUpUser', userData);}});"
+			"GameAPI.User.getUser(function (userData){if(typeof u !== 'undefined' && u.getUnity && typeof u.getUnity === 'function'){u.getUnity().SendMessage('SpilGamesAPI', 'SetUpUser', JSON.stringify(userData));}});"
 		);
 	}
 	
@@ -113,13 +115,14 @@ public class SpilGamesAPI : MonoBehaviour
 		);
 	}
 	
-	public void SetUpFriends(JSONObject friendsData){
-		Debug.Log (friendsData.ToString());
+	public void SetUpFriends(string friendsData){
+		debugText.text = "SetUpFriends Called";
+		debugText.text += friendsData;
 	}
 	
 	public void GetFriends(){
 		Application.ExternalEval (
-			"GameAPI.Friends.getFriends(function (friendsData){if(typeof u !== 'undefined' && u.getUnity && typeof u.getUnity === 'function'){u.getUnity().SendMessage('SpilGamesAPI', 'SetUpFriends', friendsData);}});"
+			"GameAPI.Friends.getFriends(function (friendsData){if(typeof u !== 'undefined' && u.getUnity && typeof u.getUnity === 'function'){u.getUnity().SendMessage('SpilGamesAPI', 'SetUpFriends', JSON.stringify(friendsData));}});"
 		);
 	}
 
@@ -183,4 +186,24 @@ public class SpilGamesAPI : MonoBehaviour
 			}
 		}
 	}
+
+
+
+
+	Texture2D ScreenGrab(){
+		Texture2D tex = new Texture2D(Screen.width, Screen.height);
+		tex.ReadPixels(new Rect(0,0,Screen.width,Screen.height),0,0);
+		tex.Apply();
+	}
+
+
+
+
+
+
+
+
+
+
+
 }
