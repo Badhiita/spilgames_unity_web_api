@@ -138,8 +138,8 @@ public class SpilGamesAPI : MonoBehaviour
 		debugText.text = "Game Resumed";
 	}
 	
-	//show a spil ad
-	public void ShowSpilAd()
+	//call for a break in the game, this will most likely be an Ad but could be other branding
+	public void GameBreak()
 	{
 		Application.ExternalEval (
 			"GameAPI.GameBreak.request(function(){if(typeof u !== 'undefined' && u.getUnity && typeof u.getUnity === 'function'){u.getUnity().SendMessage('SpilGamesAPI', 'pauseGame', '');}},function(){if(typeof u !== 'undefined' && u.getUnity && typeof u.getUnity === 'function'){u.getUnity().SendMessage('SpilGamesAPI', 'resumeGame', '');}});"
@@ -186,24 +186,5 @@ public class SpilGamesAPI : MonoBehaviour
 			}
 		}
 	}
-
-
-
-
-	Texture2D ScreenGrab(){
-		Texture2D tex = new Texture2D(Screen.width, Screen.height);
-		tex.ReadPixels(new Rect(0,0,Screen.width,Screen.height),0,0);
-		tex.Apply();
-	}
-
-
-
-
-
-
-
-
-
-
 
 }
