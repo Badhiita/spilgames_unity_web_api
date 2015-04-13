@@ -1,8 +1,10 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="../../WIP/EmojiSplat/Assets/Extensions/AndroidNative/xExample/Scripts/Social/FacebookAndroidTurnBasedAndGiftsExample.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Plugins/SpilGamesWebAPI/Scripts/SpilGamesAPI.cs">
     <Files>
-      <File FileName="../../WIP/EmojiSplat/Assets/Extensions/AndroidNative/xExample/Scripts/Social/FacebookAndroidTurnBasedAndGiftsExample.cs" Line="104" Column="1" />
+      <File FileName="../../arc/Assets/Scripts/InGameElements/UI/BuildingButtonController.cs" Line="1" Column="1" />
+      <File FileName="../../arc/Assets/Scripts/InGameElements/Buildings/BuildingController.cs" Line="1" Column="1" />
+      <File FileName="Assets/Plugins/SpilGamesWebAPI/Scripts/SpilGamesAPI.cs" Line="35" Column="1180" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

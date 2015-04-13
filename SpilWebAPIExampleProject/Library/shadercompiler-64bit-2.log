@@ -1,5 +1,5 @@
 Base path: /Applications/Unity/Unity.app/Contents
-Pipe name: \\.\pipe\UnityShaderCompiler-64bit-2-415764480
+Pipe name: \\.\pipe\UnityShaderCompiler-64bit-2-380649472
 Cmd: getPlatforms
 Cmd: compileSnippet
   api=1 type=0 insize=541 outsize=832 kw=SHADOWS_DEPTH ok=1
@@ -7,8 +7,6 @@ Cmd: compileSnippet
   api=1 type=0 insize=541 outsize=172 kw=SHADOWS_CUBE ok=1
 Cmd: compileSnippet
   api=1 type=1 insize=541 outsize=61 kw=SHADOWS_DEPTH ok=1
-Cmd: compileSnippet
-  api=0 type=1 insize=541 outsize=6 kw=SHADOWS_CUBE ok=1
 Cmd: compileSnippet
   api=1 type=1 insize=541 outsize=97 kw=SHADOWS_CUBE ok=1
 Cmd: compileSnippet
@@ -36,11 +34,11 @@ Cmd: compileSnippet
 Cmd: compileSnippet
   api=0 type=0 insize=3647 outsize=1476 kw=DIRECTIONAL ok=1
 Cmd: compileSnippet
-  api=0 type=0 insize=3647 outsize=1946 kw=SPOT ok=1
+  api=1 type=0 insize=3647 outsize=339 kw=SPOT ok=1
 Cmd: compileSnippet
-  api=1 type=0 insize=3647 outsize=339 kw=POINT_COOKIE ok=1
+  api=4 type=0 insize=3647 outsize=2737 kw=SPOT ok=1
 Cmd: compileSnippet
-  api=4 type=0 insize=3647 outsize=2737 kw=POINT_COOKIE ok=1
+  api=0 type=0 insize=3647 outsize=1890 kw=POINT_COOKIE ok=1
 Cmd: compileSnippet
   api=0 type=0 insize=3647 outsize=1707 kw=DIRECTIONAL_COOKIE ok=1
 Cmd: compileSnippet
@@ -104,33 +102,31 @@ Cmd: compileSnippet
 Cmd: compileSnippet
   api=4 type=0 insize=1275 outsize=1940 kw=POINT_COOKIE SHADOWS_OFF ok=1
 Cmd: compileSnippet
-  api=1 type=0 insize=1275 outsize=441 kw=DIRECTIONAL_COOKIE SHADOWS_OFF ok=1
+  api=0 type=0 insize=1275 outsize=2760 kw=DIRECTIONAL_COOKIE SHADOWS_OFF ok=1
 Cmd: compileSnippet
-  api=4 type=0 insize=1275 outsize=1940 kw=DIRECTIONAL_COOKIE SHADOWS_OFF ok=1
+  api=1 type=0 insize=1275 outsize=441 kw=SPOT SHADOWS_DEPTH SHADOWS_NATIVE ok=1
 Cmd: compileSnippet
-  api=0 type=0 insize=1275 outsize=3549 kw=SPOT SHADOWS_DEPTH SHADOWS_NATIVE ok=1
+  api=4 type=0 insize=1275 outsize=1940 kw=SPOT SHADOWS_DEPTH SHADOWS_NATIVE ok=1
 Cmd: compileSnippet
-  api=1 type=0 insize=1275 outsize=441 kw=DIRECTIONAL SHADOWS_SCREEN ok=1
+  api=0 type=0 insize=1275 outsize=2824 kw=DIRECTIONAL SHADOWS_SCREEN ok=1
 Cmd: compileSnippet
-  api=4 type=0 insize=1275 outsize=1940 kw=DIRECTIONAL SHADOWS_SCREEN ok=1
+  api=1 type=0 insize=1275 outsize=441 kw=DIRECTIONAL_COOKIE SHADOWS_SCREEN ok=1
 Cmd: compileSnippet
-  api=0 type=0 insize=1275 outsize=3018 kw=DIRECTIONAL_COOKIE SHADOWS_SCREEN ok=1
+  api=4 type=0 insize=1275 outsize=1940 kw=DIRECTIONAL_COOKIE SHADOWS_SCREEN ok=1
 Cmd: compileSnippet
-  api=1 type=0 insize=1275 outsize=441 kw=POINT SHADOWS_CUBE ok=1
+  api=0 type=0 insize=1275 outsize=3285 kw=POINT SHADOWS_CUBE ok=1
 Cmd: compileSnippet
-  api=4 type=0 insize=1275 outsize=1940 kw=POINT SHADOWS_CUBE ok=1
+  api=1 type=0 insize=1275 outsize=441 kw=POINT_COOKIE SHADOWS_CUBE ok=1
 Cmd: compileSnippet
-  api=0 type=0 insize=1275 outsize=3484 kw=POINT_COOKIE SHADOWS_CUBE ok=1
+  api=4 type=0 insize=1275 outsize=1940 kw=POINT_COOKIE SHADOWS_CUBE ok=1
 Cmd: compileSnippet
-  api=1 type=0 insize=1275 outsize=441 kw=SPOT SHADOWS_DEPTH SHADOWS_SOFT SHADOWS_NATIVE ok=1
+  api=0 type=0 insize=1275 outsize=4126 kw=SPOT SHADOWS_DEPTH SHADOWS_SOFT SHADOWS_NATIVE ok=1
 Cmd: compileSnippet
-  api=4 type=0 insize=1275 outsize=1940 kw=SPOT SHADOWS_DEPTH SHADOWS_SOFT SHADOWS_NATIVE ok=1
+  api=1 type=0 insize=1275 outsize=441 kw=POINT SHADOWS_CUBE SHADOWS_SOFT ok=1
 Cmd: compileSnippet
-  api=0 type=0 insize=1275 outsize=4212 kw=POINT SHADOWS_CUBE SHADOWS_SOFT ok=1
+  api=4 type=0 insize=1275 outsize=1940 kw=POINT SHADOWS_CUBE SHADOWS_SOFT ok=1
 Cmd: compileSnippet
-  api=1 type=0 insize=1275 outsize=441 kw=POINT_COOKIE SHADOWS_CUBE SHADOWS_SOFT ok=1
-Cmd: compileSnippet
-  api=4 type=0 insize=1275 outsize=1940 kw=POINT_COOKIE SHADOWS_CUBE SHADOWS_SOFT ok=1
+  api=0 type=0 insize=1275 outsize=4411 kw=POINT_COOKIE SHADOWS_CUBE SHADOWS_SOFT ok=1
 Cmd: compileSnippet
   api=1 type=1 insize=1275 outsize=1442 kw=POINT SHADOWS_OFF ok=1
 Cmd: compileSnippet
@@ -140,23 +136,47 @@ Cmd: compileSnippet
 Cmd: compileSnippet
   api=4 type=1 insize=1275 outsize=5190 kw=SPOT SHADOWS_OFF ok=1
 Cmd: compileSnippet
-  api=4 type=1 insize=1275 outsize=4979 kw=POINT_COOKIE SHADOWS_OFF ok=1
+  api=0 type=1 insize=1275 outsize=6 kw=POINT_COOKIE SHADOWS_OFF ok=1
 Cmd: compileSnippet
-  api=4 type=1 insize=1275 outsize=4516 kw=DIRECTIONAL_COOKIE SHADOWS_OFF ok=1
+  api=1 type=1 insize=1275 outsize=1555 kw=POINT_COOKIE SHADOWS_OFF ok=1
 Cmd: compileSnippet
-  api=4 type=1 insize=1275 outsize=6043 kw=SPOT SHADOWS_DEPTH SHADOWS_NATIVE ok=1
+  api=0 type=1 insize=1275 outsize=6 kw=DIRECTIONAL_COOKIE SHADOWS_OFF ok=1
 Cmd: compileSnippet
-  api=4 type=1 insize=1275 outsize=4240 kw=DIRECTIONAL SHADOWS_SCREEN ok=1
+  api=1 type=1 insize=1275 outsize=1402 kw=DIRECTIONAL_COOKIE SHADOWS_OFF ok=1
 Cmd: compileSnippet
-  api=4 type=1 insize=1275 outsize=4849 kw=DIRECTIONAL_COOKIE SHADOWS_SCREEN ok=1
+  api=0 type=1 insize=1275 outsize=6 kw=SPOT SHADOWS_DEPTH SHADOWS_NATIVE ok=1
 Cmd: compileSnippet
-  api=4 type=1 insize=1275 outsize=4987 kw=POINT SHADOWS_CUBE ok=1
+  api=1 type=1 insize=1275 outsize=1777 kw=SPOT SHADOWS_DEPTH SHADOWS_NATIVE ok=1
 Cmd: compileSnippet
-  api=4 type=1 insize=1275 outsize=5499 kw=POINT_COOKIE SHADOWS_CUBE ok=1
+  api=0 type=1 insize=1275 outsize=6 kw=DIRECTIONAL SHADOWS_SCREEN ok=1
 Cmd: compileSnippet
-  api=4 type=1 insize=1275 outsize=6653 kw=SPOT SHADOWS_DEPTH SHADOWS_SOFT SHADOWS_NATIVE ok=1
+  api=1 type=1 insize=1275 outsize=1329 kw=DIRECTIONAL SHADOWS_SCREEN ok=1
 Cmd: compileSnippet
-  api=4 type=1 insize=1275 outsize=5792 kw=POINT SHADOWS_CUBE SHADOWS_SOFT ok=1
+  api=0 type=1 insize=1275 outsize=6 kw=DIRECTIONAL_COOKIE SHADOWS_SCREEN ok=1
+Cmd: compileSnippet
+  api=1 type=1 insize=1275 outsize=1451 kw=DIRECTIONAL_COOKIE SHADOWS_SCREEN ok=1
+Cmd: compileSnippet
+  api=0 type=1 insize=1275 outsize=6 kw=POINT SHADOWS_CUBE ok=1
+Cmd: compileSnippet
+  api=1 type=1 insize=1275 outsize=1616 kw=POINT SHADOWS_CUBE ok=1
+Cmd: compileSnippet
+  api=0 type=1 insize=1275 outsize=6 kw=POINT_COOKIE SHADOWS_CUBE ok=1
+Cmd: compileSnippet
+  api=1 type=1 insize=1275 outsize=1734 kw=POINT_COOKIE SHADOWS_CUBE ok=1
+Cmd: compileSnippet
+  api=0 type=1 insize=1275 outsize=6 kw=SPOT SHADOWS_DEPTH SHADOWS_SOFT SHADOWS_NATIVE ok=1
+Cmd: compileSnippet
+  api=1 type=1 insize=1275 outsize=2041 kw=SPOT SHADOWS_DEPTH SHADOWS_SOFT SHADOWS_NATIVE ok=1
+Cmd: compileSnippet
+  api=0 type=1 insize=1275 outsize=6 kw=POINT SHADOWS_CUBE SHADOWS_SOFT ok=1
+Cmd: compileSnippet
+  api=1 type=1 insize=1275 outsize=1894 kw=POINT SHADOWS_CUBE SHADOWS_SOFT ok=1
+Cmd: compileSnippet
+  api=0 type=1 insize=1275 outsize=6 kw=POINT_COOKIE SHADOWS_CUBE SHADOWS_SOFT ok=1
+Cmd: compileSnippet
+  api=1 type=1 insize=1275 outsize=2017 kw=POINT_COOKIE SHADOWS_CUBE SHADOWS_SOFT ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=1275 outsize=6271 kw=POINT_COOKIE SHADOWS_CUBE SHADOWS_SOFT ok=1
 Cmd: compileSnippet
   api=1 type=0 insize=1268 outsize=441 kw=POINT SHADOWS_OFF ok=1
 Cmd: compileSnippet
@@ -242,9 +262,9 @@ Cmd: compileSnippet
 Cmd: compileSnippet
   api=1 type=1 insize=1268 outsize=1815 kw=POINT SHADOWS_CUBE SHADOWS_SOFT ok=1
 Cmd: compileSnippet
-  api=0 type=1 insize=1268 outsize=6 kw=POINT_COOKIE SHADOWS_CUBE SHADOWS_SOFT ok=1
+  api=4 type=1 insize=1268 outsize=5743 kw=POINT SHADOWS_CUBE SHADOWS_SOFT ok=1
 Cmd: compileSnippet
-  api=1 type=1 insize=1268 outsize=1938 kw=POINT_COOKIE SHADOWS_CUBE SHADOWS_SOFT ok=1
+  api=4 type=1 insize=1268 outsize=6222 kw=POINT_COOKIE SHADOWS_CUBE SHADOWS_SOFT ok=1
 Cmd: compileSnippet
   api=1 type=0 insize=1273 outsize=441 kw=POINT SHADOWS_OFF ok=1
 Cmd: compileSnippet
@@ -292,9 +312,7 @@ Cmd: compileSnippet
 Cmd: compileSnippet
   api=0 type=1 insize=1273 outsize=6 kw=SPOT SHADOWS_OFF ok=1
 Cmd: compileSnippet
-  api=1 type=1 insize=1273 outsize=1525 kw=SPOT SHADOWS_OFF ok=1
-Cmd: compileSnippet
-  api=0 type=1 insize=1273 outsize=6 kw=POINT_COOKIE SHADOWS_OFF ok=1
+  api=4 type=1 insize=1273 outsize=5142 kw=SPOT SHADOWS_OFF ok=1
 Cmd: compileSnippet
   api=1 type=1 insize=1273 outsize=1481 kw=POINT_COOKIE SHADOWS_OFF ok=1
 Cmd: compileSnippet
@@ -346,53 +364,53 @@ Cmd: compileSnippet
 Cmd: compileSnippet
   api=4 type=0 insize=1934 outsize=1940 kw=POINT_COOKIE SHADOWS_OFF ok=1
 Cmd: compileSnippet
-  api=0 type=0 insize=1934 outsize=3672 kw=DIRECTIONAL_COOKIE SHADOWS_OFF ok=1
+  api=1 type=0 insize=1934 outsize=441 kw=DIRECTIONAL_COOKIE SHADOWS_OFF ok=1
 Cmd: compileSnippet
-  api=1 type=0 insize=1934 outsize=441 kw=SPOT SHADOWS_DEPTH SHADOWS_NATIVE ok=1
+  api=4 type=0 insize=1934 outsize=1940 kw=DIRECTIONAL_COOKIE SHADOWS_OFF ok=1
 Cmd: compileSnippet
-  api=4 type=0 insize=1934 outsize=1940 kw=SPOT SHADOWS_DEPTH SHADOWS_NATIVE ok=1
+  api=0 type=0 insize=1934 outsize=4689 kw=SPOT SHADOWS_DEPTH SHADOWS_NATIVE ok=1
 Cmd: compileSnippet
-  api=0 type=0 insize=1934 outsize=3916 kw=DIRECTIONAL SHADOWS_SCREEN ok=1
+  api=1 type=0 insize=1934 outsize=441 kw=DIRECTIONAL SHADOWS_SCREEN ok=1
 Cmd: compileSnippet
-  api=1 type=0 insize=1934 outsize=441 kw=DIRECTIONAL_COOKIE SHADOWS_SCREEN ok=1
+  api=4 type=0 insize=1934 outsize=1940 kw=DIRECTIONAL SHADOWS_SCREEN ok=1
 Cmd: compileSnippet
-  api=4 type=0 insize=1934 outsize=1940 kw=DIRECTIONAL_COOKIE SHADOWS_SCREEN ok=1
+  api=0 type=0 insize=1934 outsize=4112 kw=DIRECTIONAL_COOKIE SHADOWS_SCREEN ok=1
 Cmd: compileSnippet
-  api=0 type=0 insize=1934 outsize=4216 kw=POINT SHADOWS_CUBE ok=1
+  api=1 type=0 insize=1934 outsize=441 kw=POINT SHADOWS_CUBE ok=1
 Cmd: compileSnippet
-  api=1 type=0 insize=1934 outsize=441 kw=POINT_COOKIE SHADOWS_CUBE ok=1
+  api=4 type=0 insize=1934 outsize=1940 kw=POINT SHADOWS_CUBE ok=1
 Cmd: compileSnippet
-  api=4 type=0 insize=1934 outsize=1940 kw=POINT_COOKIE SHADOWS_CUBE ok=1
+  api=0 type=0 insize=1934 outsize=4415 kw=POINT_COOKIE SHADOWS_CUBE ok=1
 Cmd: compileSnippet
-  api=0 type=0 insize=1934 outsize=5266 kw=SPOT SHADOWS_DEPTH SHADOWS_SOFT SHADOWS_NATIVE ok=1
+  api=1 type=0 insize=1934 outsize=441 kw=SPOT SHADOWS_DEPTH SHADOWS_SOFT SHADOWS_NATIVE ok=1
 Cmd: compileSnippet
-  api=1 type=0 insize=1934 outsize=441 kw=POINT SHADOWS_CUBE SHADOWS_SOFT ok=1
+  api=4 type=0 insize=1934 outsize=1940 kw=SPOT SHADOWS_DEPTH SHADOWS_SOFT SHADOWS_NATIVE ok=1
 Cmd: compileSnippet
-  api=4 type=0 insize=1934 outsize=1940 kw=POINT SHADOWS_CUBE SHADOWS_SOFT ok=1
+  api=0 type=0 insize=1934 outsize=5135 kw=POINT SHADOWS_CUBE SHADOWS_SOFT ok=1
 Cmd: compileSnippet
-  api=0 type=0 insize=1934 outsize=5334 kw=POINT_COOKIE SHADOWS_CUBE SHADOWS_SOFT ok=1
+  api=1 type=0 insize=1934 outsize=441 kw=POINT_COOKIE SHADOWS_CUBE SHADOWS_SOFT ok=1
 Cmd: compileSnippet
-  api=1 type=0 insize=1934 outsize=441 kw=POINT SHADOWS_OFF UNITY_HDR_ON ok=1
+  api=4 type=0 insize=1934 outsize=1940 kw=POINT_COOKIE SHADOWS_CUBE SHADOWS_SOFT ok=1
 Cmd: compileSnippet
-  api=4 type=0 insize=1934 outsize=1940 kw=POINT SHADOWS_OFF UNITY_HDR_ON ok=1
+  api=0 type=0 insize=1934 outsize=3654 kw=POINT SHADOWS_OFF UNITY_HDR_ON ok=1
 Cmd: compileSnippet
-  api=1 type=0 insize=1934 outsize=441 kw=DIRECTIONAL SHADOWS_OFF UNITY_HDR_ON ok=1
+  api=0 type=0 insize=1934 outsize=3394 kw=DIRECTIONAL SHADOWS_OFF UNITY_HDR_ON ok=1
 Cmd: compileSnippet
-  api=4 type=0 insize=1934 outsize=1940 kw=DIRECTIONAL SHADOWS_OFF UNITY_HDR_ON ok=1
+  api=1 type=0 insize=1934 outsize=441 kw=SPOT SHADOWS_OFF UNITY_HDR_ON ok=1
 Cmd: compileSnippet
-  api=0 type=0 insize=1934 outsize=3939 kw=SPOT SHADOWS_OFF UNITY_HDR_ON ok=1
+  api=4 type=0 insize=1934 outsize=1940 kw=SPOT SHADOWS_OFF UNITY_HDR_ON ok=1
 Cmd: compileSnippet
-  api=1 type=0 insize=1934 outsize=441 kw=POINT_COOKIE SHADOWS_OFF UNITY_HDR_ON ok=1
+  api=0 type=0 insize=1934 outsize=3863 kw=POINT_COOKIE SHADOWS_OFF UNITY_HDR_ON ok=1
 Cmd: compileSnippet
-  api=4 type=0 insize=1934 outsize=1940 kw=POINT_COOKIE SHADOWS_OFF UNITY_HDR_ON ok=1
+  api=1 type=0 insize=1934 outsize=441 kw=DIRECTIONAL_COOKIE SHADOWS_OFF UNITY_HDR_ON ok=1
 Cmd: compileSnippet
-  api=0 type=0 insize=1934 outsize=3663 kw=DIRECTIONAL_COOKIE SHADOWS_OFF UNITY_HDR_ON ok=1
+  api=4 type=0 insize=1934 outsize=1940 kw=DIRECTIONAL_COOKIE SHADOWS_OFF UNITY_HDR_ON ok=1
 Cmd: compileSnippet
-  api=1 type=0 insize=1934 outsize=441 kw=SPOT SHADOWS_DEPTH SHADOWS_NATIVE UNITY_HDR_ON ok=1
+  api=0 type=0 insize=1934 outsize=4680 kw=SPOT SHADOWS_DEPTH SHADOWS_NATIVE UNITY_HDR_ON ok=1
 Cmd: compileSnippet
-  api=4 type=0 insize=1934 outsize=1940 kw=SPOT SHADOWS_DEPTH SHADOWS_NATIVE UNITY_HDR_ON ok=1
+  api=1 type=0 insize=1934 outsize=441 kw=DIRECTIONAL SHADOWS_SCREEN UNITY_HDR_ON ok=1
 Cmd: compileSnippet
-  api=0 type=0 insize=1934 outsize=3907 kw=DIRECTIONAL SHADOWS_SCREEN UNITY_HDR_ON ok=1
+  api=4 type=0 insize=1934 outsize=1940 kw=DIRECTIONAL SHADOWS_SCREEN UNITY_HDR_ON ok=1
 Cmd: compileSnippet
   api=0 type=0 insize=1934 outsize=4103 kw=DIRECTIONAL_COOKIE SHADOWS_SCREEN UNITY_HDR_ON ok=1
 Cmd: compileSnippet
@@ -426,19 +444,31 @@ Cmd: compileSnippet
 Cmd: compileSnippet
   api=0 type=1 insize=1934 outsize=6 kw=SPOT SHADOWS_DEPTH SHADOWS_NATIVE ok=1
 Cmd: compileSnippet
-  api=4 type=1 insize=1934 outsize=8465 kw=SPOT SHADOWS_DEPTH SHADOWS_NATIVE ok=1
+  api=1 type=1 insize=1934 outsize=2746 kw=SPOT SHADOWS_DEPTH SHADOWS_NATIVE ok=1
 Cmd: compileSnippet
-  api=4 type=1 insize=1934 outsize=6775 kw=DIRECTIONAL SHADOWS_SCREEN ok=1
+  api=0 type=1 insize=1934 outsize=6 kw=DIRECTIONAL SHADOWS_SCREEN ok=1
 Cmd: compileSnippet
-  api=4 type=1 insize=1934 outsize=7230 kw=DIRECTIONAL_COOKIE SHADOWS_SCREEN ok=1
+  api=1 type=1 insize=1934 outsize=2384 kw=DIRECTIONAL SHADOWS_SCREEN ok=1
 Cmd: compileSnippet
-  api=4 type=1 insize=1934 outsize=7018 kw=POINT SHADOWS_CUBE ok=1
+  api=0 type=1 insize=1934 outsize=6 kw=DIRECTIONAL_COOKIE SHADOWS_SCREEN ok=1
 Cmd: compileSnippet
-  api=4 type=1 insize=1934 outsize=7563 kw=POINT_COOKIE SHADOWS_CUBE ok=1
+  api=1 type=1 insize=1934 outsize=2476 kw=DIRECTIONAL_COOKIE SHADOWS_SCREEN ok=1
 Cmd: compileSnippet
-  api=4 type=1 insize=1934 outsize=9074 kw=SPOT SHADOWS_DEPTH SHADOWS_SOFT SHADOWS_NATIVE ok=1
+  api=0 type=1 insize=1934 outsize=6 kw=POINT SHADOWS_CUBE ok=1
 Cmd: compileSnippet
-  api=4 type=1 insize=1934 outsize=7815 kw=POINT SHADOWS_CUBE SHADOWS_SOFT ok=1
+  api=1 type=1 insize=1934 outsize=2411 kw=POINT SHADOWS_CUBE ok=1
+Cmd: compileSnippet
+  api=0 type=1 insize=1934 outsize=6 kw=POINT_COOKIE SHADOWS_CUBE ok=1
+Cmd: compileSnippet
+  api=1 type=1 insize=1934 outsize=2504 kw=POINT_COOKIE SHADOWS_CUBE ok=1
+Cmd: compileSnippet
+  api=0 type=1 insize=1934 outsize=6 kw=SPOT SHADOWS_DEPTH SHADOWS_SOFT SHADOWS_NATIVE ok=1
+Cmd: compileSnippet
+  api=1 type=1 insize=1934 outsize=2990 kw=SPOT SHADOWS_DEPTH SHADOWS_SOFT SHADOWS_NATIVE ok=1
+Cmd: compileSnippet
+  api=0 type=1 insize=1934 outsize=6 kw=POINT SHADOWS_CUBE SHADOWS_SOFT ok=1
+Cmd: compileSnippet
+  api=1 type=1 insize=1934 outsize=2694 kw=POINT SHADOWS_CUBE SHADOWS_SOFT ok=1
 Cmd: compileSnippet
   api=4 type=1 insize=1934 outsize=8294 kw=POINT_COOKIE SHADOWS_CUBE SHADOWS_SOFT ok=1
 Cmd: compileSnippet
@@ -448,15 +478,11 @@ Cmd: compileSnippet
 Cmd: compileSnippet
   api=4 type=1 insize=1934 outsize=6068 kw=DIRECTIONAL SHADOWS_OFF UNITY_HDR_ON ok=1
 Cmd: compileSnippet
-  api=0 type=1 insize=1934 outsize=6 kw=SPOT SHADOWS_OFF UNITY_HDR_ON ok=1
-Cmd: compileSnippet
   api=1 type=1 insize=1934 outsize=2321 kw=SPOT SHADOWS_OFF UNITY_HDR_ON ok=1
 Cmd: compileSnippet
   api=4 type=1 insize=1934 outsize=6994 kw=POINT_COOKIE SHADOWS_OFF UNITY_HDR_ON ok=1
 Cmd: compileSnippet
   api=4 type=1 insize=1934 outsize=6482 kw=DIRECTIONAL_COOKIE SHADOWS_OFF UNITY_HDR_ON ok=1
-Cmd: compileSnippet
-  api=0 type=1 insize=1934 outsize=6 kw=SPOT SHADOWS_DEPTH SHADOWS_NATIVE UNITY_HDR_ON ok=1
 Cmd: compileSnippet
   api=1 type=1 insize=1934 outsize=2685 kw=SPOT SHADOWS_DEPTH SHADOWS_NATIVE UNITY_HDR_ON ok=1
 Cmd: compileSnippet
