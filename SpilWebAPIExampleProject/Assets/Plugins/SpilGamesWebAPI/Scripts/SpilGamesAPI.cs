@@ -25,7 +25,7 @@ public class SpilGamesAPI : MonoBehaviour
 	//have we recived the logo texture from the portal
 	private bool _hasTexture = false;
 
-	string version = "0.0.4";
+	string version = "0.0.5";
 	
 	void Start () 
 	{
@@ -96,6 +96,12 @@ public class SpilGamesAPI : MonoBehaviour
 		debugText.text = url;
 	}
 
+
+	public Boolean IsSiteLock(){
+		return Application.ExternalEval (
+			"GameAPI.Friends.isSiteLock();"
+		);
+	}
 
 	//social features
 	public void ForceAuthentication(){
