@@ -25,7 +25,7 @@ public class SpilGamesAPI : MonoBehaviour
 	//have we recived the logo texture from the portal
 	private bool _hasTexture = false;
 
-	string version = "0.0.6";
+	string version = "0.0.7";
 	
 	void Start () 
 	{
@@ -99,7 +99,7 @@ public class SpilGamesAPI : MonoBehaviour
 
 	public Boolean IsSiteLock(){
 		return Application.ExternalEval (
-			"GameAPI.Friends.isSiteLock();"
+			"GameAPI.Game.isSiteLock();"
 		);
 	}
 
