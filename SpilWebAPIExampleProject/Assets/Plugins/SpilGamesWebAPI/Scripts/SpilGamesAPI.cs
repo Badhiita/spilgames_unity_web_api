@@ -10,17 +10,17 @@ public class SpilGamesAPI : MonoBehaviour
 	//debug text for example project, feel free to take this out
 	public Text debugText;
 
-	//your Spil `Games web game ID
+	//replace with your Spil `Games web game ID
 	public string GAME_ID = "576742227280293562";
 	
-	// where you will put the portal logo
-	public Rect logoPosition;
-
 	// the custom height used by the custom height method
 	public int customHeight;
 	
 	//the logo of the portal
-	private Texture _logo;
+	private Texture2D _logo;
+
+	//the button that shows the branding logo
+	public Image brandingButtonImage;
 
 	//have we recived the logo texture from the portal
 	private bool _hasTexture = false;
@@ -94,6 +94,10 @@ public class SpilGamesAPI : MonoBehaviour
 		_logo = www.texture;
 		_hasTexture = true;
 		debugText.text = url;
+		if(_logo != null){
+			brandingButtonImage.sprite = Sprite.Create(_logo , new Rect(0,0,_logo.width,_logo.height),Vector2.zero);
+			brandingButtonImage.color = new Color(1,1,1,1);
+		}
 	}
 
 	public void OnSiteLock()
@@ -199,21 +203,11 @@ public class SpilGamesAPI : MonoBehaviour
 			"if (GameAPI && GameAPI.isReady) {GameAPI.Branding.getLink('amazon').action();}"
 		);
 	}
-	
-	//draw the logo
-	void OnGUI() 
-	{
-		if (_hasTexture) 
-		{
-			GUI.DrawTexture (logoPosition, _logo);
-			
-			if (Input.GetMouseButtonUp (0)) 
-			{
-				if (logoPosition.Contains (Event.current.mousePosition)) 
-				{
-					Application.ExternalEval ("GameAPI.Branding.getLogo().action();");
-				}
-			}
+
+	//when the branding logo is clicked
+	public void BrandingLogoClicked(){
+		if (_logo != null) {
+			Application.ExternalEval ("GameAPI.Branding.getLogo().action();");
 		}
 	}
 
