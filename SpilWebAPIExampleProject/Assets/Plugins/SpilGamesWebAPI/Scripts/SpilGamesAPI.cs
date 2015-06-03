@@ -25,7 +25,7 @@ public class SpilGamesAPI : MonoBehaviour
 	//have we recived the logo texture from the portal
 	private bool _hasTexture = false;
 
-	string version = "0.0.4";
+	string version = "0.0.7";
 	
 	void Start () 
 	{
@@ -96,6 +96,12 @@ public class SpilGamesAPI : MonoBehaviour
 		debugText.text = url;
 	}
 
+
+	public Boolean IsSiteLock(){
+		return Application.ExternalEval (
+			"GameAPI.Game.isSiteLock();"
+		);
+	}
 
 	//social features
 	public void ForceAuthentication(){
@@ -185,6 +191,14 @@ public class SpilGamesAPI : MonoBehaviour
 	{
 		Application.ExternalEval (
 			"if (GameAPI && GameAPI.isReady) {GameAPI.Branding.getLink('google_play').action();}"
+		);
+	}
+
+	//Open the Amazon store in a new tab. Ask your publishing contact to set this link up with the label 'amazon'
+	public void OpenAmazonLink()
+	{
+		Application.ExternalEval (
+			"if (GameAPI && GameAPI.isReady) {GameAPI.Branding.getLink('amazon').action();}"
 		);
 	}
 	
