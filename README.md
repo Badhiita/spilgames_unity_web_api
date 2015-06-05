@@ -1,7 +1,7 @@
 # spilgames_unity_web_api
 If you are developing a web build of your unity game for Spilgames, then you can use this plugin to help you interact with the Spilgames web portal API.
 
-You can download the plugin here: <a title="Unity Plugin" href="http://files.cdn.spilcloud.com/gameapi_plugin/1433324058_SpilgamesWebAPIUnityPluginV0_0_7.unitypackage">Download</a>
+You can download the plugin here: <a title="Unity Plugin" href="http://files.cdn.spilcloud.com/gameapi_plugin/1433497059_Spilgames_WebAPI_Unity_Plugin_V0_0_8.unitypackage">Download</a>
 
 Or you can directly download this repo.
 
@@ -30,6 +30,7 @@ resumeGame ()
 These methods will be called before and after showing external content in your game.</li>
 	<li>Call the ShowSpilMoreGames() and GameBreak() methods in your game in the places agreed on with your publishing lead.</li>
 	<li>Set the position of the portal logo. In the example, I have created a button that displays the returned portal logo. <em>brandingButtonImage</em>. Then when that button is clicked, it calls <em>BrandingLogoClicked</em>();. Feel free to do this another way if you don't want to use this method.</li>
+	<li>Ask your spil contact whether it is necessary to include a game lock feature in your game. If so, then add some code to lock the game to the OnSiteLock method. An example would be a UI panel that appears over the game blocking input.</li>
 </ol>
 
 Now test your game in the <a title="test tool" href="http://cdn.gameplayer.io/testtool/index.html#!/tester">test tool</a>. You should be able to trigger all green ticks on the right of the page.
