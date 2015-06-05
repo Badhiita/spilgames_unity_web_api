@@ -74,3 +74,9 @@ Application.ExternalEval (
 
 </br>
 You can also send a score or achievements (awards) to the portal if the portal is configured to receive it using the ScoreSubmit and AwardSubmit methods.
+
+
+
+
+<strong>Recent Changes</strong></br>
+V 0.0.8: Now works with Unity WebGL Export.
