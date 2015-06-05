@@ -25,15 +25,27 @@ public class SpilGamesAPI : MonoBehaviour
 	//have we recived the logo texture from the portal
 	private bool _hasTexture = false;
 
-	string version = "0.0.7";
+	string version = "0.0.8";
 	
 	void Start () 
 	{
 		this.gameObject.name = "SpilGamesAPI";
 		//call to the API with the game ID, request assets
+
+
+
+#if UNITY_WEBPLAYER
 		Application.ExternalEval (
 			"(function() {function onLoadError () {if(typeof u !== 'undefined' && u.getUnity && typeof u.getUnity === 'function'){u.getUnity().SendMessage('SpilGamesAPI', 'APILoadingError', '');}};function initUnity () {if(typeof u !== 'undefined' && u.getUnity && typeof u.getUnity === 'function'){var setGameAPILogo = function (logoUrl) {u.getUnity().SendMessage('SpilGamesAPI', 'setGameAPILogo', logoUrl);};var apiInstance;GameAPI.loadAPI(function(api){apiInstance = api;apiInstance.Branding.displaySplashScreen(function(){});var logoData = apiInstance.Branding.getLogo();if(logoData.image){setGameAPILogo(logoData.image);}if (api.Game.isSiteLock()) {u.getUnity().SendMessage('SpilGamesAPI', 'OnSiteLock', '');}window.onkeydown = function(){};}, {id:'" + GAME_ID + "'});}};function loadScript(src, callback) {var s,r,t;r = false;s = document.createElement('script');s.type = 'text/javascript';s.src = src;s.onerror = onLoadError;s.onload = s.onreadystatechange = function() {if ( !r && (!this.readyState || this.readyState == 'complete') ){r = true;callback();}};t = document.getElementsByTagName('script')[0];t.parentNode.insertBefore(s, t);};if (typeof GameAPI !== 'undefined') {initUnity();} else {loadScript('http://cdn.gameplayer.io/api/js/game.js', initUnity);}})();"
 			);
+#endif
+#if UNITY_WEBGL
+		Application.ExternalEval (
+			"(function() {function onLoadError () {SendMessage('SpilGamesAPI', 'APILoadingError', '');};function initUnity () {var setGameAPILogo = function (logoUrl) {SendMessage('SpilGamesAPI', 'setGameAPILogo', logoUrl);};var apiInstance;GameAPI.loadAPI(function(api){apiInstance = api;apiInstance.Branding.displaySplashScreen(function(){});var logoData = apiInstance.Branding.getLogo();if(logoData.image){setGameAPILogo(logoData.image);}if (api.Game.isSiteLock()) {SendMessage('SpilGamesAPI', 'OnSiteLock', '');}window.onkeydown = function(){};}, {id:'" + GAME_ID + "'});};function loadScript(src, callback) {var s;var r;var t;r = false;s = document.createElement('script');s.type = 'text/javascript';s.src = src;s.onerror = onLoadError;s.onload = s.onreadystatechange = function() {if ( !r && (!this.readyState || this.readyState == 'complete') ){r = true;callback();}};t = document.getElementsByTagName('script')[0];t.parentNode.insertBefore(s, t);};if (typeof GameAPI !== 'undefined') {initUnity();} else {loadScript('http://cdn.gameplayer.io/api/js/game.js', initUnity);}})();"
+			);
+#endif
+
+
 		debugText.text = "APILoaded";
 		Application.ExternalEval ("if (console && console.log) console.log('plugin version : " + version + "');");
 	}
@@ -66,13 +78,6 @@ public class SpilGamesAPI : MonoBehaviour
 			WebAlert ("Got URL " + url + " - will load!");
 			StartCoroutine (loadLogo (url));
 		}
-	}
-	
-	void requestBreak()
-	{
-		Application.ExternalEval (
-			"apiInstance.Branding.displaySplashScreen(function(){apiInstance.GameBreak.request(pauseGame, resumeGame)});"
-		);
 	}
 	
 	public void AdjustHeight(){
@@ -118,9 +123,17 @@ public class SpilGamesAPI : MonoBehaviour
 	}
 	
 	public void GetUser(){
+
+		#if UNITY_WEBPLAYER
 		Application.ExternalEval (
 			"GameAPI.User.getUser(function (userData){if(typeof u !== 'undefined' && u.getUnity && typeof u.getUnity === 'function'){u.getUnity().SendMessage('SpilGamesAPI', 'SetUpUser', JSON.stringify(userData));}});"
-		);
+			);
+		#endif
+		#if UNITY_WEBGL
+		Application.ExternalEval (
+			"GameAPI.User.getUser(function(userData) {SendMessage('SpilGamesAPI', 'SetUpUser', JSON.stringify(userData));});"
+			);
+			#endif
 	}
 	
 	public void ShowInvite(){
@@ -135,9 +148,16 @@ public class SpilGamesAPI : MonoBehaviour
 	}
 	
 	public void GetFriends(){
+		#if UNITY_WEBPLAYER
 		Application.ExternalEval (
 			"GameAPI.Friends.getFriends(function (friendsData){if(typeof u !== 'undefined' && u.getUnity && typeof u.getUnity === 'function'){u.getUnity().SendMessage('SpilGamesAPI', 'SetUpFriends', JSON.stringify(friendsData));}});"
 		);
+		#endif
+		#if UNITY_WEBGL
+		Application.ExternalEval (
+			"GameAPI.Friends.getFriends(function(friendsData) {SendMessage('SpilGamesAPI', 'SetUpFriends', JSON.stringify(friendsData));});"
+			);
+		#endif
 	}
 
 	//submit a player score to the portal
@@ -167,9 +187,16 @@ public class SpilGamesAPI : MonoBehaviour
 	//call for a break in the game, this will most likely be an Ad but could be other branding
 	public void GameBreak()
 	{
+		#if UNITY_WEBPLAYER
 		Application.ExternalEval (
 			"GameAPI.GameBreak.request(function(){if(typeof u !== 'undefined' && u.getUnity && typeof u.getUnity === 'function'){u.getUnity().SendMessage('SpilGamesAPI', 'pauseGame', '');}},function(){if(typeof u !== 'undefined' && u.getUnity && typeof u.getUnity === 'function'){u.getUnity().SendMessage('SpilGamesAPI', 'resumeGame', '');}});"
-		);
+			);
+		#endif
+		#if UNITY_WEBGL
+		Application.ExternalEval (
+			"GameAPI.GameBreak.request(function(){SendMessage('SpilGamesAPI', 'pauseGame', '');},function(){SendMessage('SpilGamesAPI', 'resumeGame', '');});"
+			);
+		#endif
 	}
 	
 	//show the more games stuff
